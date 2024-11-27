@@ -1,0 +1,51 @@
+@import "../../../styles/variables.scss";
+
+.sobre-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $gray-bg;
+  padding: 50px 20px;
+  min-height: 80vh;
+
+  /* Estilizando a logo */
+  .logo-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .logo {
+      width: 300px; /* Ajuste de tamanho conforme necessário */
+      height: auto;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      margin-bottom: -80px;
+      margin-top: -60px;
+    }
+
+    .logo:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  /* Estilizando o texto */
+  .texto-container {
+    max-width: 800px;
+    text-align: center;
+
+    h1 {
+      font-size: 36px;
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 18px;
+      color: $text-color;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+  }
+}

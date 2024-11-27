@@ -1,0 +1,72 @@
+<div class="curriculo-container">
+  <h2>Currículos</h2>
+
+  <!-- Campo de entrada para o nome, profissão, experiência, foto de perfil e outros dados -->
+  <input [(ngModel)]="newCurriculo.nome" placeholder="Nome Completo" />
+  <input [(ngModel)]="newCurriculo.profissao" placeholder="Profissão" />
+
+  <!-- Campo para foto de perfil -->
+  <div class="photo-upload">
+    <label for="foto">Foto de Perfil:</label>
+    <input type="file" (change)="onFileChange($event)" id="foto" />
+    <div *ngIf="newCurriculo.foto">
+      <img [src]="newCurriculo.foto" alt="Foto de Perfil" />
+    </div>
+  </div>
+
+  <textarea
+    [(ngModel)]="newCurriculo.experiencia"
+    placeholder="Experiência Profissional"
+  ></textarea>
+  <textarea
+    [(ngModel)]="newCurriculo.educacao"
+    placeholder="Educação"
+  ></textarea>
+  <textarea
+    [(ngModel)]="newCurriculo.habilidades"
+    placeholder="Habilidades"
+  ></textarea>
+
+  <!-- Campos adicionais -->
+  <input [(ngModel)]="newCurriculo.endereco" placeholder="Endereço" />
+  <input [(ngModel)]="newCurriculo.dataNascimento" type="date" />
+  <input [(ngModel)]="newCurriculo.telefone" placeholder="Telefone" />
+
+  <!-- Botão para adicionar ou salvar o currículo -->
+  <button (click)="editMode ? saveCurriculo() : addCurriculo()">
+    {{ editMode ? "Salvar" : "Adicionar" }}
+  </button>
+
+  <!-- Botão para cancelar a edição -->
+  <button *ngIf="editMode" (click)="cancelEdit()">Cancelar</button>
+
+  <!-- Lista de currículos -->
+  <div class="curriculo-list">
+    <div *ngFor="let curriculo of curriculos; let i = index">
+      <div class="curriculo-item">
+        <img
+          *ngIf="curriculo.foto"
+          [src]="curriculo.foto"
+          alt="Foto de Perfil"
+          class="perfil-foto"
+        />
+        <h3>{{ curriculo.nome }}</h3>
+        <p><strong>Profissão:</strong> {{ curriculo.profissao }}</p>
+        <p><strong>Experiência:</strong> {{ curriculo.experiencia }}</p>
+        <p><strong>Educação:</strong> {{ curriculo.educacao }}</p>
+        <p><strong>Habilidades:</strong> {{ curriculo.habilidades }}</p>
+        <p><strong>Endereço:</strong> {{ curriculo.endereco }}</p>
+        <p>
+          <strong>Data de Nascimento:</strong>
+          {{ curriculo.dataNascimento | date }}
+        </p>
+        <p><strong>Telefone:</strong> {{ curriculo.telefone }}</p>
+
+        <div class="button-container">
+          <button (click)="editCurriculo(i)">Editar</button>
+          <button (click)="deleteCurriculo(i)">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,149 @@
+@import "../../../styles/variables.scss";
+
+.post-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: $primary-color;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+
+  h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: $gray-bg;
+    margin-bottom: 30px;
+  }
+
+  .post-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px; /* Espaço entre a área de criação e a lista de posts */
+  }
+
+  /* Estilo para a área de criação de post */
+  .post-form {
+    flex: 1;
+    min-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 16px;
+      background-color: #fff;
+      transition: border-color 0.3s ease-in-out;
+
+      &:focus {
+        border-color: $primary-color;
+        outline: none;
+      }
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      color: $gray-bg;
+      background-color: $primary-color;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $text-color;
+      }
+
+      &[disabled] {
+        background-color: #bdc3c7;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  /* Estilo para a lista de posts */
+  .post-list {
+    flex: 2;
+    min-width: 400px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+
+    .post-item {
+      background-color: #fff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+      }
+
+      h3 {
+        font-size: 22px;
+        font-weight: bold;
+        color: $primary-color;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-size: 16px;
+        color: #7f8c8d;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+
+      .button-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+
+        button {
+          padding: 8px 15px;
+          background-color: $primary-color;
+          color: white;
+          border-radius: 6px;
+          border: none;
+          cursor: pointer;
+          font-size: 14px;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $text-color;
+          }
+        }
+
+        .edit-button {
+          background-color: $primary-color;
+
+          &:hover {
+            background-color: $text-color;
+          }
+        }
+
+        .delete-button {
+          background-color: $primary-color;
+
+          &:hover {
+            background-color: $text-color;
+          }
+        }
+      }
+    }
+  }
+}

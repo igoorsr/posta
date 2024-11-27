@@ -1,0 +1,35 @@
+<div class="post-container">
+  <h2>Publicações</h2>
+
+  <!-- Layout com Flexbox -->
+  <div class="post-layout">
+    <!-- Campo de entrada para o título e texto do post -->
+    <div class="post-form">
+      <input [(ngModel)]="newPost.titulo" placeholder="Título" />
+      <textarea
+        [(ngModel)]="newPost.texto"
+        placeholder="Escreva seu post..."
+      ></textarea>
+
+      <!-- Botão para adicionar ou salvar o post -->
+      <button (click)="editMode ? savePost() : addPost()">
+        {{ editMode ? "Salvar" : "Adicionar" }}
+      </button>
+
+      <!-- Botão para cancelar a edição -->
+      <button *ngIf="editMode" (click)="cancelEdit()">Cancelar</button>
+    </div>
+
+    <!-- Lista de posts -->
+    <div class="post-list">
+      <div *ngFor="let post of posts; let i = index" class="post-item">
+        <h3>{{ post.titulo }}</h3>
+        <p>{{ post.texto }}</p>
+        <div class="button-container">
+          <button class="edit-button" (click)="editPost(i)">Editar</button>
+          <button class="delete-button" (click)="deletePost(i)">Excluir</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

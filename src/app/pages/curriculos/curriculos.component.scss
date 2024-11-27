@@ -1,0 +1,120 @@
+@import "../../../styles/variables.scss";
+
+.curriculo-container {
+  background-color: $primary-color;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 900px;
+  margin: 30px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    font-size: 24px;
+    color: $gray-bg;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+
+    &::placeholder {
+      color: #aaa;
+    }
+
+    &:focus {
+      border-color: #33c1ba;
+      outline: none;
+    }
+  }
+
+  .photo-upload {
+    margin-bottom: 20px;
+    label {
+      font-size: 16px;
+      color: $gray-bg;
+      display: block;
+      margin-bottom: 8px;
+    }
+    input[type="file"] {
+      padding: 8px;
+      font-size: 14px;
+      margin-bottom: 10px;
+    }
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+  }
+
+  button {
+    padding: 12px 20px;
+    font-size: 16px;
+    color: $primary-color;
+    background-color: $gray-bg;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: $gray-secondary-bg;
+    }
+
+    &[disabled] {
+      background-color: $primary-color;
+      cursor: not-allowed;
+    }
+  }
+
+  .curriculo-list {
+    margin-top: 30px;
+
+    .curriculo-item {
+      background-color: #ffffff;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+
+      .perfil-foto {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      h3 {
+        color: $primary-color;
+        font-size: 20px;
+      }
+
+      p {
+        color: #7f8c8d;
+        font-size: 14px;
+      }
+
+      .button-container {
+        margin-top: 15px;
+
+        button {
+          margin-right: 10px;
+          background-color: $primary-color;
+          color: $gray-bg;
+        }
+      }
+    }
+  }
+}
