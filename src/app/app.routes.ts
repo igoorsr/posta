@@ -5,6 +5,7 @@ import { AuthGuard } from './services/auth-guard.service';
 import { PostsComponent } from './pages/posts/posts.component';
 import { CurriculosComponent } from './pages/curriculos/curriculos.component';
 import { SobreComponent } from './pages/sobre/sobre.component';
+import { VagasComponent } from './pages/vagas/vagas.component';
 
 export const routes: Routes = [
     {
@@ -33,6 +34,11 @@ export const routes: Routes = [
     {
       path: 'sobre',
       component: SobreComponent,
+      canActivate: [AuthGuard],
+    },
+    {
+      path: 'vagas',
+      component: VagasComponent,
       canActivate: [AuthGuard],
     },
   ];

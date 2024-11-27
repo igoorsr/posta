@@ -1,0 +1,12 @@
+<!-- src/app/pages/vagas/vagas.component.html -->
+<div class="vagas-container">
+  <h2>Vagas de Emprego - Área de TI</h2>
+
+  <div *ngFor="let vaga of vagas" class="vaga-card">
+    <h3>{{ vaga.titulo }}</h3>
+    <p><strong>Descrição:</strong> {{ vaga.descricao }}</p>
+    <p><strong>Requisitos:</strong> {{ vaga.requisitos }}</p>
+    <p><strong>Local:</strong> {{ vaga.local }}</p>
+    <button (click)="candidatar(vaga.id)">Candidatar-se</button>
+  </div>
+</div>
